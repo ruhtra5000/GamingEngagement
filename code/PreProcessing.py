@@ -2,10 +2,7 @@ import pandas
 
 # Module for data preprocessing 
 
-def preProcessing():
-    # Loading dataset
-    dataset = pandas.read_csv('online_gaming_behavior_dataset.csv')
-
+def preProcessing(dataset):
     # Removing PlayerID column
     dataset = dataset.drop(columns=["PlayerID"])
 
@@ -17,9 +14,8 @@ def preProcessing():
 
     dataset["EngagementLevel"] = dataset["EngagementLevel"].replace({"Low": 0, "Medium": 1, "High": 2})
         
-    print(dataset.dtypes) 
-
     print(dataset.describe())
+    print(dataset.dtypes) 
 
     print(f"\nLocation values: {dataset["Location"].unique()}")
     print(f"\nGame genre values: {dataset["GameGenre"].unique()}")
