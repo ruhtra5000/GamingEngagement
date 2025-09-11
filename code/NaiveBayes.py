@@ -25,12 +25,12 @@ def naiveBayesTraining(dataset: pandas.DataFrame, doRating = False):
     # Training models
     model.fit(train, labels_train)
 
-    # Predict values
-    predictedLabels = model.predict(test)
-
     # Rating
     if doRating:
-        print("Matriz de confusão:")
+        # Predict values
+        predictedLabels = model.predict(test)
+        
+        print("\nMatriz de confusão:")
         print(confusion_matrix(labels_test, predictedLabels))
 
         print("\nRelatório de classificação:")
