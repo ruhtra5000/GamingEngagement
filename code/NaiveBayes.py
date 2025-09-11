@@ -5,7 +5,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 # Module for model training (using Naive Bayes)
 
-def naiveBayesTraining(dataset: pandas.DataFrame):
+def naiveBayesTraining(dataset: pandas.DataFrame, doRating = False):
     # Select features
     columns = ["Age", "SessionsPerWeek", "AvgSessionDurationMinutes", "PlayerLevel", 
                "AchievementsUnlocked"] 
@@ -29,8 +29,9 @@ def naiveBayesTraining(dataset: pandas.DataFrame):
     predictedLabels = model.predict(test)
 
     # Rating
-    print("Matriz de confusão:")
-    print(confusion_matrix(labels_test, predictedLabels))
+    if doRating:
+        print("Matriz de confusão:")
+        print(confusion_matrix(labels_test, predictedLabels))
 
-    print("\nRelatório de classificação:")
-    print(classification_report(labels_test, predictedLabels))
+        print("\nRelatório de classificação:")
+        print(classification_report(labels_test, predictedLabels))
