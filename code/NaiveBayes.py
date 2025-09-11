@@ -35,3 +35,5 @@ def naiveBayesTraining(dataset: pandas.DataFrame, doRating = False):
 
         print("\nRelatório de classificação:")
         print(classification_report(labels_test, predictedLabels))
+
+    return model
