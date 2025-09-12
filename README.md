@@ -9,6 +9,6 @@ The dataset used can be found on [Kaggle](https://www.kaggle.com/datasets/rabiee
 ## Running the project
 
 - Download and install [Python](https://www.python.org/downloads/) (min v3.12)
-- Run the command: `pip install pandas streamlit`
+- Run the command: `pip install pandas streamlit scikit-learn`
 - Run the command: `pip instal matplotlib seaborn` (*OPTIONAL*, used to plot graphs)
 - To run the project itself: `streamlit run code/Engagement.py`
